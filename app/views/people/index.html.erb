@@ -1,0 +1,20 @@
+<h1>People app!</h1>
+<div ng-app="app">
+  <div ng-controller="peopleCtrl">
+    <h3>People</h3>
+    <ul>
+      <li ng-repeat="person in people">
+        <h2 ng-click="toggleBioVisible(person)">{{person.name}}</h2>
+        <p ng-class="{strike: person.bioVisible}">{{person.bio}}</p>
+        <a href="#" ng-click="deletePerson(person)">Delete</a>
+      </li>
+    </ul>
+    <h4>Total number of people: {{people.length}}</h4>
+    <h3> Add new person!</h3>
+    <div>
+    <label>Name:</label><input ng-model="newPersonName">
+    <label>Bio:</label><input ng-model="newPersonBio">
+    <button ng-click="addPerson(newPersonName, newPersonBio)">Add Person</button>
+    </div>
+  </div>
+</div>
